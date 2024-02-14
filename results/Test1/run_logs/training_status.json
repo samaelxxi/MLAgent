@@ -1,0 +1,56 @@
+{
+    "ExitLevel": {
+        "checkpoints": [
+            {
+                "steps": 499981,
+                "file_path": "results\\Test1\\ExitLevel\\ExitLevel-499981.onnx",
+                "reward": 1.0664316541270207,
+                "creation_time": 1707915840.4779248,
+                "auxillary_file_paths": [
+                    "results\\Test1\\ExitLevel\\ExitLevel-499981.pt"
+                ]
+            },
+            {
+                "steps": 999981,
+                "file_path": "results\\Test1\\ExitLevel\\ExitLevel-999981.onnx",
+                "reward": 1.432310189078836,
+                "creation_time": 1707916057.8633056,
+                "auxillary_file_paths": [
+                    "results\\Test1\\ExitLevel\\ExitLevel-999981.pt"
+                ]
+            },
+            {
+                "steps": 1499994,
+                "file_path": "results\\Test1\\ExitLevel\\ExitLevel-1499994.onnx",
+                "reward": 1.4438571231496846,
+                "creation_time": 1707916293.687942,
+                "auxillary_file_paths": [
+                    "results\\Test1\\ExitLevel\\ExitLevel-1499994.pt"
+                ]
+            },
+            {
+                "steps": 1532283,
+                "file_path": "results\\Test1\\ExitLevel\\ExitLevel-1532283.onnx",
+                "reward": 1.4538538523000144,
+                "creation_time": 1707916370.3856022,
+                "auxillary_file_paths": [
+                    "results\\Test1\\ExitLevel\\ExitLevel-1532283.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1532283,
+            "file_path": "results\\Test1\\ExitLevel.onnx",
+            "reward": 1.4538538523000144,
+            "creation_time": 1707916370.3856022,
+            "auxillary_file_paths": [
+                "results\\Test1\\ExitLevel\\ExitLevel-1532283.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cpu"
+    }
+}

@@ -9,20 +9,33 @@ public class Button : MonoBehaviour
     [SerializeField] UnityEvent _onButtonPressed;
     [SerializeField] Renderer _buttonRenderer;
 
+
+    public bool IsPressed { get; private set; }
+
+    public event System.Action OnButtonPressed;
+
+    Tween _pressTween;
+
     public void PressButton()
     {
+        if (IsPressed)
+            return;
+        
+        IsPressed = true;
+        _pressTween = _buttonRenderer.material.DOColor(Color.green, 1);
         _onButtonPressed.Invoke();
-        _buttonRenderer.material.DOColor(Color.green, 1);
-    }
-
-    [ContextMenu("Press Button")]
-    public void PressButtonContextMenu()
-    {
-        PressButton();
+        OnButtonPressed?.Invoke();
     }
 
     public void Reset()
     {
-        _buttonRenderer.material.DOColor(Color.red, 0);
+        _pressTween.Kill();
+        _buttonRenderer.material.color = Color.red;
+        IsPressed = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        PressButton();
     }
 }

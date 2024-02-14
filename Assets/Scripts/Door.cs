@@ -9,6 +9,8 @@ public class Door : MonoBehaviour
 
     const float HEIGHT = 2;
 
+    Tween _openTween;
+
     private void Awake()
     {
         _initialY = gameObject.transform.localPosition.y;
@@ -16,11 +18,12 @@ public class Door : MonoBehaviour
 
     public void OpenDoor()
     {
-        gameObject.transform.DOLocalMoveY(_initialY + HEIGHT, 1);
+        _openTween = gameObject.transform.DOLocalMoveY(_initialY + HEIGHT, 1);
     }
 
     public void Reset()
     {
-        gameObject.transform.DOLocalMoveY(_initialY, 0);
+        _openTween.Kill();
+        gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, _initialY, gameObject.transform.localPosition.z);
     }
 }
